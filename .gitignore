@@ -1,3 +1,4 @@
 .vscode
 xlsx/*
 __pycache__
+.venv
