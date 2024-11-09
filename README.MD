@@ -1,52 +1,81 @@
 # OrganizeX
 
-**OrganizeX** é uma ferramenta inovadora que simplifica a gestão financeira, permitindo que usuários importem facilmente dados de diferentes formatos, como XLSX, CSV e PDF. O projeto automatiza a leitura e conversão dessas informações em um arquivo XLSX personalizado, pronto para ser integrado ao aplicativo de controle de finanças, **Organize**.
+**OrganizeX** é uma ferramenta inovadora projetada para simplificar a gestão financeira. Ela permite que os usuários importem dados de diferentes formatos, como **XLSX**, **CSV** e **PDF**, e os converta de maneira automatizada em um arquivo **XLS** personalizado, pronto para ser integrado ao aplicativo **Organize**, um sistema de controle financeiro.
 
 ## Recursos
 
-- **Importação de Múltiplos Formatos**: Suporte para arquivos XLSX.
-- **Conversão Automatizada**: Transforme dados financeiros em um formato organizado e fácil de usar.
-- **Integração Simples**: Os arquivos convertidos são prontos para serem usados no aplicativo **Organize**.
+- **Importação de Múltiplos Formatos**: Suporte para arquivos XLS, CSV e PDF.
+- **Conversão Automatizada**: Transforma dados financeiros em um formato organizado e fácil de usar.
+- **Integração Simples**: Arquivos convertidos são prontos para serem usados diretamente no aplicativo **Organize**.
+
+## Requisitos do Sistema
+
+- **Python 3.12.6**: Certifique-se de usar a versão correta do Python. Caso você tenha múltiplas versões, pode usar um gerenciador de versões como o **asdf** para alternar facilmente entre as versões.
 
 ## Instalação
 
-Para utilizar o OrganizeX, você precisa ter o Python instalado em sua máquina. Siga os passos abaixo:
+Para utilizar o **OrganizeX**, você precisará ter o **Python 3.12.6** instalado em sua máquina. Caso você tenha múltiplas versões do Python ou deseje controlar sua versão, pode utilizar um gerenciador de versões como o **asdf**.
 
-1. Clone o repositório:
+### Passos para instalar o OrganizeX:
+
+1. **Clone o repositório**:
+
    ```bash
    git clone https://github.com/Luiz1nn/organizex.git
    ```
-   
-2. Navegue até o diretório do projeto:
+
+2. **Navegue até o diretório do projeto**:
+
    ```bash
-   cd OrganizeX
+   cd organizex
    ```
 
-3. Instale as dependências necessárias:
+3. **Instale o Pipenv**:
+
+   O **Pipenv** é utilizado para gerenciar dependências de forma simples e eficaz. Instale-o com o comando:
+
    ```bash
-   python3 setup.py
+   pip install pipenv
+   ```
+
+4. **Instale as dependências**:
+
+   Para instalar todas as dependências necessárias para rodar o OrganizeX, execute:
+
+   ```bash
+   pipenv install
+   ```
+
+5. **Ative o ambiente virtual do Pipenv**:
+
+   Sempre que for usar o OrganizeX, ative o ambiente virtual com:
+
+   ```bash
+   pipenv shell
    ```
 
 ## Uso
 
-Para usar o OrganizeX, execute o seguinte comando no terminal:
+Para usar o **OrganizeX**, basta executar o seguinte comando no terminal:
 
 ```bash
 python organizex.py --input <caminho_do_arquivo> --output <caminho_do_arquivo_saida>
 ```
 
-Substitua `<caminho_do_arquivo>` pelo caminho do arquivo que você deseja importar e `<caminho_do_arquivo_saida>` pelo nome do arquivo XLSX que será gerado.
+- **`<caminho_do_arquivo>`**: O caminho para o arquivo de entrada (pode ser um arquivo XLSX, CSV ou PDF).
+- **`<caminho_do_arquivo_saida>`**: O caminho e nome do arquivo XLSX gerado após a conversão.
 
-## Exemplos
+### Exemplo
 
-- Importar um arquivo XLSX:
-  ```bash
-  python organizex.py --input ./dados/financas.xlsx --output ./saida/financas_convertidas.xlsx
-  ```
+Para importar um arquivo **XLSX** e gerar um novo arquivo convertido:
+
+```bash
+python organizex.py --input ./dados/financas.xlsx --output ./saida/financas_convertidas.xlsx
+```
 
 ## Contato
 
-Para mais informações, entre em contato:
+Para mais informações ou ajuda:
 
-- Author: Luiz1nn
-- Linkedin: [Luis Fernando da Silva](https://www.linkedin.com/in/luis-fernando-s/)
+- **Autor**: Luiz1nn
+- **LinkedIn**: [Luis Fernando da Silva](https://www.linkedin.com/in/luis-fernando-s/)
