@@ -4,8 +4,7 @@ from utils.setup_warnings import setup_warnings
 
 def main():
     setup_warnings()
-    parser = create_parser()
-    args = parser.parse_args()
+    args = create_parser()
     process_file(args.input, args.output)
 
 main()
