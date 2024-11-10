@@ -11,12 +11,15 @@
 ## Requisitos do Sistema
 
 - **Python 3.12.6**: Certifique-se de usar a versão correta do Python. Caso você tenha múltiplas versões, pode usar um gerenciador de versões como o **asdf** para alternar facilmente entre as versões.
+- **Docker (opcional)**: Caso prefira, você pode rodar o **OrganizeX** em um container Docker.
 
 ## Instalação
 
-Para utilizar o **OrganizeX**, você precisará ter o **Python 3.12.6** instalado em sua máquina. Caso você tenha múltiplas versões do Python ou deseje controlar sua versão, pode utilizar um gerenciador de versões como o **asdf**.
+### Usando Python
 
-### Passos para instalar o OrganizeX:
+Para utilizar o **OrganizeX** no seu ambiente local, você precisará ter o **Python 3.12.6** instalado em sua máquina.
+
+#### Passos para instalar o OrganizeX:
 
 1. **Clone o repositório**:
 
@@ -54,9 +57,41 @@ Para utilizar o **OrganizeX**, você precisará ter o **Python 3.12.6** instalad
    pipenv shell
    ```
 
+### Usando Docker
+
+Caso você prefira não instalar o Python localmente, pode rodar o **OrganizeX** utilizando o Docker. Para isso, siga os passos abaixo:
+
+#### Passos para rodar via Docker:
+
+1. **Clone o repositório**:
+
+   ```bash
+   git clone https://github.com/Luiz1nn/organizex.git
+   ```
+
+2. **Navegue até o diretório do projeto**:
+
+   ```bash
+   cd organizex
+   ```
+
+3. **Construa a imagem Docker**:
+
+   ```bash
+   docker compose -f docker/docker-compose.yml build
+   ```
+
+4. **Execute o container Docker**:
+
+   Para rodar o OrganizeX com Docker Compose, use o comando abaixo, substituindo <caminho_do_arquivo> e <caminho_do_arquivo_saida> pelos caminhos reais no seu sistema:
+
+   ```bash
+   docker compose run --rm organizex python organizex.py --input /app/dados/financas.xlsx --output /app/saida/financas_convertidas.xls
+   ```
+
 ## Uso
 
-Para usar o **OrganizeX**, basta executar o seguinte comando no terminal:
+Para usar o **OrganizeX**, basta executar o seguinte comando no terminal, seja no ambiente Python ou Docker:
 
 ```bash
 python organizex.py --input <caminho_do_arquivo> --output <caminho_do_arquivo_saida>
@@ -71,6 +106,12 @@ Para importar um arquivo **XLSX** e gerar um novo arquivo **XLS**:
 
 ```bash
 python organizex.py --input ./dados/financas.xlsx --output ./saida/financas_convertidas.xls
+```
+
+Ou, se estiver utilizando Docker:
+
+```bash
+docker compose run --rm organizex python organizex.py --input /app/dados/financas.xlsx --output /app/saida/financas_convertidas.xls
 ```
 
 ## Contato
