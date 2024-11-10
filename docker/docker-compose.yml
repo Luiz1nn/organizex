@@ -1,11 +1,12 @@
-version: "3.8"
-
 services:
   organizex:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     volumes:
-      - .:/app
+      - ..:/app
     environment:
       - PYTHONPATH=/app
+    working_dir: /app
     entrypoint: ["python", "organizex.py"]
     command: []

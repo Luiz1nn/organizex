@@ -4,7 +4,7 @@
 
 ## Recursos
 
-- **Importação de Múltiplos Formatos**: Suporte para arquivos XLS, CSV e PDF.
+- **Importação de Múltiplos Formatos**: Suporte para arquivos XLSX, CSV e PDF.
 - **Conversão Automatizada**: Transforma dados financeiros em um formato organizado e fácil de usar.
 - **Integração Simples**: Arquivos convertidos são prontos para serem usados diretamente no aplicativo **Organize**.
 
@@ -21,7 +21,7 @@ Para utilizar o **OrganizeX** no seu ambiente local, você precisará ter o **Py
 
 #### Passos para instalar o OrganizeX:
 
-1. **Clone o repositório**:
+1. **Clone o repositório** (se ainda não fez isso):
 
    ```bash
    git clone https://github.com/Luiz1nn/organizex.git
@@ -33,29 +33,28 @@ Para utilizar o **OrganizeX** no seu ambiente local, você precisará ter o **Py
    cd organizex
    ```
 
-3. **Instale o Pipenv**:
-
-   O **Pipenv** é utilizado para gerenciar dependências de forma simples e eficaz. Instale-o com o comando:
-
+3. **Execute o `setup.py` para instalar as dependências**:
+   - Isso vai verificar e instalar o `pipenv`, e instalar as dependências do projeto.
    ```bash
-   pip install pipenv
+   python setup.py
    ```
 
-4. **Instale as dependências**:
+### Como usar:
 
-   Para instalar todas as dependências necessárias para rodar o OrganizeX, execute:
+1. **Para usar o OrganizeX**:
 
-   ```bash
-   pipenv install
-   ```
+   - Sempre que precisar usar o OrganizeX, entre no ambiente virtual com o comando:
 
-5. **Ative o ambiente virtual do Pipenv**:
+     ```bash
+     pipenv shell
+     ```
 
-   Sempre que for usar o OrganizeX, ative o ambiente virtual com:
+     Isso irá ativar o ambiente virtual do `pipenv`, e você poderá rodar o OrganizeX normalmente.
 
-   ```bash
-   pipenv shell
-   ```
+   - Para rodar o **OrganizeX**, use o comando:
+     ```bash
+     python organizex.py --input <caminho_do_arquivo> --output <caminho_do_arquivo_saida>
+     ```
 
 ### Usando Docker
 
@@ -86,7 +85,7 @@ Caso você prefira não instalar o Python localmente, pode rodar o **OrganizeX**
    Para rodar o OrganizeX com Docker Compose, use o comando abaixo, substituindo <caminho_do_arquivo> e <caminho_do_arquivo_saida> pelos caminhos reais no seu sistema:
 
    ```bash
-   docker compose run --rm organizex python organizex.py --input /app/dados/financas.xlsx --output /app/saida/financas_convertidas.xls
+   docker compose -f docker/docker-compose.yml run --rm organizex --input files/file.xlsx --output files/converted-file.xls
    ```
 
 ## Uso
@@ -105,13 +104,13 @@ python organizex.py --input <caminho_do_arquivo> --output <caminho_do_arquivo_sa
 Para importar um arquivo **XLSX** e gerar um novo arquivo **XLS**:
 
 ```bash
-python organizex.py --input ./dados/financas.xlsx --output ./saida/financas_convertidas.xls
+python organizex.py --input files/file.xlsx --output files/converted-file.xls
 ```
 
 Ou, se estiver utilizando Docker:
 
 ```bash
-docker compose run --rm organizex python organizex.py --input /app/dados/financas.xlsx --output /app/saida/financas_convertidas.xls
+docker compose -f docker/docker-compose.yml run --rm organizex --input files/file.xlsx --output files/converted-file.xls
 ```
 
 ## Contato
