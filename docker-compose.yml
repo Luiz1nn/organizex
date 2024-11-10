@@ -1,5 +1,3 @@
-# docker-compose.yml
-
 version: "3.8"
 
 services:
@@ -10,4 +8,4 @@ services:
     environment:
       - PYTHONPATH=/app
     entrypoint: ["python", "organizex.py"]
-    command: ["--input", "xlsx/file.xlsx", "--output", "xlsx/new_file.xls"]
+    command: []
