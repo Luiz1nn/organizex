@@ -1,4 +1,4 @@
-FROM python:3.12.6-alpine
+FROM python:3.12.6-alpine as build
 
 RUN apk add --no-cache \
     curl git make zlib-dev libbz2 readline-dev \
@@ -11,8 +11,14 @@ COPY requirements.txt /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+FROM python:3.12.6-alpine
+
+COPY --from=build /usr/local/lib/python3.12 /usr/local/lib/python3.12
+COPY --from=build /usr/local/bin /usr/local/bin
+COPY --from=build /app /app
+
+WORKDIR /app
 
 ENTRYPOINT ["python", "organizex.py"]
 
-CMD [] 
+CMD []
