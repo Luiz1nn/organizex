@@ -63,14 +63,14 @@ python organizex.py --input <caminho_do_arquivo> --output <caminho_do_arquivo_sa
 ```
 
 - **`<caminho_do_arquivo>`**: O caminho para o arquivo de entrada (pode ser um arquivo XLSX, CSV ou PDF).
-- **`<caminho_do_arquivo_saida>`**: O caminho e nome do arquivo XLSX gerado após a conversão.
+- **`<caminho_do_arquivo_saida>`**: O caminho e nome do arquivo XLS gerado após a conversão.
 
 ### Exemplo
 
-Para importar um arquivo **XLSX** e gerar um novo arquivo convertido:
+Para importar um arquivo **XLSX** e gerar um novo arquivo **XLS**:
 
 ```bash
-python organizex.py --input ./dados/financas.xlsx --output ./saida/financas_convertidas.xlsx
+python organizex.py --input ./dados/financas.xlsx --output ./saida/financas_convertidas.xls
 ```
 
 ## Contato
