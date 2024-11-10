@@ -3,6 +3,7 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+    image: luizinn/organizex:v1.0.0
     volumes:
       - ..:/app
     environment:
