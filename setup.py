@@ -1,14 +1,11 @@
-import subprocess
-import sys
+from pipenv_manager.check_and_install import check_and_install_pipenv
+from pipenv_manager.run_commands import run_pipenv_commands
 
-def install_requirements():
-    try:
-        with open('requirements.txt') as f:
-            requirements = f.read().splitlines()
-        
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', *requirements])
-        print("Dependencies installed successfully.")
-    except Exception as e:
-        print(f"An error occurred during installation: {e}")
 
-install_requirements()
+def setup():
+    check_and_install_pipenv()
+    run_pipenv_commands()
+
+
+setup()
+
