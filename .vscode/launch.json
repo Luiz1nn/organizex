@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python Debugger: OrganizeX with Arguments",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/organizex.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--input", "xlsx/file.xlsx",
+        "--output", "xlsx/new_file.xls"
+      ]
+    }
+  ]
+}

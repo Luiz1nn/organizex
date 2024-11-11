@@ -1,4 +1,4 @@
-.vscode
+.vscode/settings.json
 xlsx/*
 __pycache__
 .venv
