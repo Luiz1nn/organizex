@@ -1,6 +1,6 @@
 from cli import create_parser
 from file_processor import process_file
-from utils.setup_warnings import setup_warnings
+from utils import setup_warnings
 
 
 __version__ = "1.0.0"
