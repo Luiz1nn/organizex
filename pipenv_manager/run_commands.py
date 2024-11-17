@@ -1,5 +1,6 @@
 import subprocess
 
+
 def run_pipenv_commands():
     """Executa o comando pipenv shell e pipenv install."""
 
@@ -12,4 +13,3 @@ def run_pipenv_commands():
         subprocess.check_call(["pipenv", "install"])
     except subprocess.CalledProcessError:
         print("Erro ao tentar executar pipenv install.")
-

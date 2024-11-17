@@ -7,11 +7,10 @@ from .setup_warnings import setup_warnings
 
 
 __all__ = [
-  convert_to_xls, 
-  remove_dates,
-  remove_extra_spaces,
-  remove_sequential_numbers,
-  remove_times,
-  setup_warnings
+    'convert_to_xls',
+    'remove_dates',
+    'remove_extra_spaces',
+    'remove_sequential_numbers',
+    'remove_times',
+    'setup_warnings'
 ]
-

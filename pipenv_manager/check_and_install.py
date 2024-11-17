@@ -9,5 +9,5 @@ def check_and_install_pipenv():
         subprocess.check_call([sys.executable, "-m", "pip", "show", "pipenv"])
     except subprocess.CalledProcessError:
         print("pipenv não está instalado. Instalando...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "pipenv"])
-
+        subprocess.check_call(
+            [sys.executable, "-m", "pip", "install", "pipenv"])
