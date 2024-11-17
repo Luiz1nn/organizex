@@ -1,4 +1,5 @@
 .vscode/settings.json
-xlsx/*
+*.xls
+*.xlsx
 __pycache__
 .venv

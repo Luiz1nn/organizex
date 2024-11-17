@@ -17,7 +17,7 @@ def process_file(input_file: str, output_file: str) -> None:
             'Saldo Anterior', 'Saldo do dia', 'S A L D O']
         df_filtered: DataFrame = df[~df.isin(filter_keywords).any(axis=1)]
 
-        df_filtered['Detalhes'] = df_filtered['Detalhes'].apply(remove_dates).apply(
+        df_filtered.loc[:, 'Detalhes'] = df_filtered['Detalhes'].apply(remove_dates).apply(
             remove_times).apply(remove_sequential_numbers).apply(remove_extra_spaces)
 
         df_final: DataFrame = pd.DataFrame({
