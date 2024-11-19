@@ -3,7 +3,7 @@ from file_processor import process_file
 from utils import setup_warnings
 
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"
 
 
 def main():
