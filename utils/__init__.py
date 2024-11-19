@@ -1,4 +1,5 @@
 from .convert_to_xls import convert_to_xls
+from .normalize_text import normalize_text
 from .remove_dates import remove_dates
 from .remove_extra_spaces import remove_extra_spaces
 from .remove_sequential_numbers import remove_sequential_numbers
@@ -8,6 +9,7 @@ from .setup_warnings import setup_warnings
 
 __all__ = [
     'convert_to_xls',
+    'normalize_text',
     'remove_dates',
     'remove_extra_spaces',
     'remove_sequential_numbers',

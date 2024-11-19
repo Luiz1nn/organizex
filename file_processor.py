@@ -1,11 +1,12 @@
 import pandas as pd
 from pandas import DataFrame
 from utils import (
+    convert_to_xls,
+    normalize_text,
     remove_dates,
     remove_sequential_numbers,
     remove_times,
     remove_extra_spaces,
-    convert_to_xls
 )
 
 
@@ -18,7 +19,7 @@ def process_file(input_file: str, output_file: str) -> None:
         df_filtered: DataFrame = df[~df.isin(filter_keywords).any(axis=1)]
 
         df_filtered.loc[:, 'Detalhes'] = df_filtered['Detalhes'].apply(remove_dates).apply(
-            remove_times).apply(remove_sequential_numbers).apply(remove_extra_spaces)
+            remove_times).apply(remove_sequential_numbers).apply(remove_extra_spaces).apply(normalize_text)
 
         df_final: DataFrame = pd.DataFrame({
             'Data': df_filtered['Data'],
