@@ -74,10 +74,10 @@ Caso você prefira não instalar o Python localmente, pode rodar o **OrganizeX**
    cd organizex
    ```
 
-3. **Construa a imagem Docker**:
+3. **Baixe a imagem mais recente do Docker Hub**:
 
    ```bash
-   docker compose -f docker/docker-compose.yml build
+   docker pull luizinn/organizex:v1.5.0
    ```
 
 4. **Execute o container Docker**:
