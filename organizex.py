@@ -3,7 +3,7 @@ from file_processor import process_file
 from utils import ensure_normalizations_json, setup_warnings
 
 
-__version__ = "1.4.0"
+__version__ = "1.5.0"
 
 
 def main():
