@@ -10,6 +10,7 @@ from utils import (
 
 from .check_and_fill_empty_details import check_and_fill_empty_details
 from .convert_to_xls import convert_to_xls
+from .get_category_value_from_json import get_category_value_from_json
 from .update_details_for_credit_payment import update_details_for_credit_payment
 
 
@@ -25,7 +26,9 @@ def process_file(input_file: str, output_file: str) -> None:
             'Saldo Anterior', 'Saldo do dia', 'S A L D O'
         ]
 
-        df_filtered: DataFrame = df[~df.isin(filter_keywords).any(axis=1)]
+        df_filtered: DataFrame = df[
+            ~df.isin(filter_keywords).any(axis=1)
+        ].copy()
 
         df_filtered.loc[:, 'Detalhes'] = (
             df_filtered['Detalhes']
@@ -36,10 +39,14 @@ def process_file(input_file: str, output_file: str) -> None:
             .apply(normalize_text)
         )
 
+        df_filtered.loc[:, 'Categoria'] = df_filtered['Detalhes'].apply(
+            get_category_value_from_json
+        )
+
         df_final: DataFrame = pd.DataFrame({
             'Data': df_filtered['Data'],
             'Descrição': df_filtered['Detalhes'],
-            'Categoria': '',
+            'Categoria': df_filtered['Categoria'],
             'Valor': df_filtered['Valor'],
             'Situação': ''
         })

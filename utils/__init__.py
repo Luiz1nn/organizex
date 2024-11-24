@@ -1,3 +1,4 @@
+from .ensure_categories import ensure_categories
 from .ensure_normalizations import ensure_normalizations
 from .normalize_text import normalize_text
 from .remove_dates import remove_dates
@@ -7,6 +8,7 @@ from .remove_times import remove_times
 from .setup_warnings import setup_warnings
 
 __all__ = [
+    'ensure_categories',
     'ensure_normalizations',
     'normalize_text',
     'remove_dates',
