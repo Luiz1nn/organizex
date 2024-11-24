@@ -2,7 +2,7 @@ import os
 import json
 
 
-def ensure_normalizations_json() -> None:
+def ensure_normalizations() -> None:
     file_path = os.path.join(
         os.path.dirname(__file__),
         '..',
