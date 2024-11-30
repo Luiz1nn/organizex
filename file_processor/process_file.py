@@ -7,11 +7,10 @@ from utils import (
     remove_times,
     remove_extra_spaces,
 )
-
-from .check_and_fill_empty_details import check_and_fill_empty_details
-from .convert_to_xls import convert_to_xls
-from .get_category_value_from_json import get_category_value_from_json
-from .update_details_for_credit_payment import update_details_for_credit_payment
+from file_processor.check_and_fill_empty_details import check_and_fill_empty_details
+from file_processor.convert_to_xls import convert_to_xls
+from file_processor.get_category_value_from_json import get_category_value_from_json
+from file_processor.update_details_for_credit_payment import update_details_for_credit_payment
 
 
 def process_file(input_file: str, output_file: str) -> None:
