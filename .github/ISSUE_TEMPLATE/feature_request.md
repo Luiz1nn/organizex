@@ -1,9 +1,9 @@
 ---
 name: Tracking issue
 about: Use this template for tracking new features.
-title: "[DATE]: [FEATURE NAME]"
+title: "feat: [FEATURE NAME]"
 labels: tracking issue, needs triage
-assignees: octocat
+assignees: Luiz1nn
 ---
 
 ### Descrição da Feature ✨
