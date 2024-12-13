@@ -4,7 +4,7 @@ from utils import ensure_categories, ensure_normalizations, setup_warnings
 from animate_text import animate_text
 
 
-__version__ = "1.8.0"
+__version__ = "1.8.1"
 
 
 def main():
