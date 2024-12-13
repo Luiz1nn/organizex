@@ -18,7 +18,7 @@ def animate_text():
     with a brief time interval between each display.
     """
 
-    ascii_art = text2art("organizex")
+    ascii_art = text2art("organizex", font="tarty1")
 
     custom_green = "\033[38;2;22;198;79m"
 
